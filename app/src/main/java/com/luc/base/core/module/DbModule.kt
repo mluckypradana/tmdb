@@ -7,9 +7,11 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.luc.base.core.helper.SessionStorage
 import com.luc.base.database.MyRoomDatabase
+import com.luc.base.entity.Review
 import com.luc.base.repository.GenreRepo
 import com.luc.base.repository.MovieRepo
 import com.luc.base.repository.NoteRepo
+import com.luc.base.repository.ReviewRepo
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -21,6 +23,7 @@ object DbModule {
         single { NoteRepo(get()) }
         single { GenreRepo() }
         single { MovieRepo() }
+        single { ReviewRepo() }
     }
 
     private fun provideDatabase(context: Context): MyRoomDatabase {

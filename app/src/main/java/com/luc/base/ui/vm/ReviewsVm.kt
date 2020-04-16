@@ -9,53 +9,50 @@ import com.luc.base.core.Constant
 import com.luc.base.core.api.Resource
 import com.luc.base.core.base.BaseViewModel
 import com.luc.base.core.helper.toGson
-import com.luc.base.entity.Genre
 import com.luc.base.entity.Movie
-import com.luc.base.repository.GenreRepo
-import com.luc.base.repository.MovieRepo
+import com.luc.base.entity.Review
+import com.luc.base.repository.ReviewRepo
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 import org.koin.core.inject
-import java.util.*
 
-class MoviesVm(context: Application) : BaseViewModel(context), KoinComponent {
-    private var genre: Genre? = null
+class ReviewsVm(context: Application) : BaseViewModel(context), KoinComponent {
+    private var movie: Movie? = null
     private var page: Int = 0
-    private var movies: MutableLiveData<Resource<MutableList<Movie>>> = MutableLiveData(Resource.Loading())
-    private val repo: MovieRepo by inject()
+    private var reviews: MutableLiveData<Resource<MutableList<Review>>> = MutableLiveData(Resource.Loading())
+    private val repo: ReviewRepo by inject()
 
-    fun fetchMovies(refresh: Boolean = false) = viewModelScope.launch {
-        val list = movies.value?.data ?: arrayListOf()
+    fun fetchReviews(refresh: Boolean = false) = viewModelScope.launch {
+        val list = reviews.value?.data ?: arrayListOf()
         if (!refresh)
             page++
         else {
             page = 1
             list?.clear()
         }
-        when (val resource = repo.fetchMoviesByGenre(page, genre)) {
+        when (val resource = repo.fetchReviews(page, movie)) {
             is Resource.Success -> {
                 val mutableList = resource.data?.toMutableList()
                 if (mutableList.isNullOrEmpty() && refresh)
-                    movies.value = Resource.Empty()
+                    reviews.value = Resource.Empty()
                 else {
                     mutableList?.let { list.addAll(it) }
-                    movies.value = Resource.Success(list)
+                    reviews.value = Resource.Success(list)
                 }
             }
-            else -> movies.value = resource
+            else -> reviews.value = resource
         }
     }
 
-    fun getMovies(): LiveData<Resource<MutableList<Movie>>> = movies
+    fun getReviews(): LiveData<Resource<MutableList<Review>>> = reviews
 
     fun setArguments(arguments: Bundle?) {
         val data = arguments?.getBundle(Constant.BUNDLE_DATA)
-        genre = data?.getString(Constant.GENRE)?.toGson(Genre::class.java)
-        fetchMovies()
+        movie = data?.getString(Constant.MOVIE)?.toGson(Movie::class.java)
+        fetchReviews()
     }
 
-    fun getMovieAt(position: Int): Movie? {
-        return movies.value?.data?.get(position)
+    fun setMovie(movie: Movie?) {
+        this.movie = movie
     }
-
 }

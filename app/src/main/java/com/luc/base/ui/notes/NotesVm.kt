@@ -38,7 +38,7 @@ class NotesVm(context: Application) : BaseViewModel(context), KoinComponent {
             onValidate(getString(errorResId))
             return@launch
         }
-        when (val res = repo.insert(data!!)) {
+        when (val res = repo.insert()) {
             is Resource.Success<*> -> onSuccess(res)
             is Resource.Error -> onError(res)
         }

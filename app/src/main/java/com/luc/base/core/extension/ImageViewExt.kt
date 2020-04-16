@@ -26,9 +26,8 @@ fun ImageView.loadResource(imageId: Int) {
     loadResourceImage(imageId, R.drawable.bg_placeholder)
 }
 
-
 @BindingAdapter("srcUrl")
-fun ImageView.srcUrl(url: String) {
+fun ImageView.srcUrl(url: String?) {
     loadResourceImage(JNIUtil.imageEndPoint() + url, R.drawable.bg_placeholder)
 }
 

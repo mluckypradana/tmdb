@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.luc.base.ui.vm.ReviewsVm" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <ViewFlipper
+            android:id="@+id/vf_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:measureAllChildren="false">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_main"
+                dividerResId="@{@drawable/divider}"
+                verticalOrientation="@{true}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:padding="@dimen/content" />
+
+            <include
+                android:id="@+id/progress"
+                layout="@layout/layout_progress" />
+
+            <include
+                android:id="@+id/noData"
+                layout="@layout/layout_no_data" />
+
+            <include
+                android:id="@+id/failed"
+                layout="@layout/layout_failed" />
+        </ViewFlipper>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

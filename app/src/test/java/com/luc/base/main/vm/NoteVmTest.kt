@@ -5,7 +5,6 @@ import com.luc.base.core.api.Resource
 import com.luc.base.entity.Note
 import com.luc.base.repository.NoteRepo
 import com.luc.base.ui.notes.NotesVm
-import com.nhaarman.mockitokotlin2.any
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.koin.core.inject
@@ -38,7 +37,7 @@ class NoteVmTest : BaseVmTest() {
     fun errorInsert() {
         val expectedMessage = "Gagal menambah data"
         runBlocking {
-            `when`(repo.insert(any())).thenReturn(Resource.Error(expectedMessage))
+            `when`(repo.insert()).thenReturn(Resource.Error())
             vm.data.postValue(getValidData())
             vm.insert(
                 { assert(false) },
@@ -54,7 +53,7 @@ class NoteVmTest : BaseVmTest() {
     fun successInsert() {
         val expectedData = getValidData()
         runBlocking {
-            `when`(repo.insert(any())).thenReturn(Resource.Success(expectedData))
+            `when`(repo.insert()).thenReturn(Resource.Success(expectedData))
             vm.data.postValue(expectedData)
             vm.insert(
                 {

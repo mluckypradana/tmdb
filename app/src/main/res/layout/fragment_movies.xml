@@ -8,43 +8,30 @@
             type="com.luc.base.ui.vm.MoviesVm" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <ViewFlipper
+        android:id="@+id/vf_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/sr_main"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main"
+            dividerResId="@{@drawable/divider}"
+            verticalOrientation="@{true}"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="@dimen/content" />
 
-            <ViewFlipper
-                android:id="@+id/vf_main"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+        <include
+            android:id="@+id/progress"
+            layout="@layout/layout_progress" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_main"
-                    dividerResId="@{@drawable/divider}"
-                    verticalOrientation="@{true}"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="false"
-                    android:padding="@dimen/content" />
+        <include
+            android:id="@+id/noData"
+            layout="@layout/layout_no_data" />
 
-                <include
-                    android:id="@+id/progress"
-                    layout="@layout/layout_progress" />
-
-                <include
-                    android:id="@+id/noData"
-                    layout="@layout/layout_no_data" />
-
-                <include
-                    android:id="@+id/failed"
-                    layout="@layout/layout_failed" />
-            </ViewFlipper>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <include
+            android:id="@+id/failed"
+            layout="@layout/layout_failed" />
+    </ViewFlipper>
 </layout>

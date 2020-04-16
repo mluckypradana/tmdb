@@ -3,7 +3,6 @@ package com.luc.base.main.repo
 import com.luc.base.base.BaseRepoTest
 import com.luc.base.core.api.MockInterceptor
 import com.luc.base.database.dao.NoteDao
-import com.luc.base.entity.Note
 import com.luc.base.repository.NoteRepo
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
@@ -22,7 +21,7 @@ class NoteRepoTest : BaseRepoTest() {
     fun insertTest() {
         runBlocking {
             MockInterceptor.setResponse(200, readFromFile("/note_create.json"))
-            val result = repo.insert(Note())
+            val result = repo.insert()
             assert(result.message == "Success adding a note")
         }
     }

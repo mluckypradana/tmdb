@@ -17,4 +17,9 @@ fun RecyclerView.dividerResId(resId: Drawable) {
         DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
     itemDecorator.setDrawable(resId)
     addItemDecoration(itemDecorator)
+
+    val itemDecoratorHorizontal =
+        DividerItemDecoration(context, DividerItemDecoration.HORIZONTAL)
+    itemDecoratorHorizontal.setDrawable(resId)
+    addItemDecoration(itemDecoratorHorizontal)
 }

@@ -15,7 +15,7 @@ class NoteRepo(private val noteDao: NoteDao) : BaseRepository() {
     val list: LiveData<List<Note>> = noteDao.getAlphabetizedNotes()
 
     /** Validate, post to server, save to database*/
-    suspend fun insert(data: Note): Resource<Note> {
+    suspend fun insert(): Resource<Note> {
         return Resource.Error()
     }
 
