@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.luc.base.entity.Movie" />
+
+        <variable
+            name="handler"
+            type="com.luc.base.core.base.BaseListAdapter.Holder" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        style="@style/Clickable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v) -> handler.onClick(v, position)}"
+        app:cardBackgroundColor="@android:color/holo_orange_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                srcUrl="@{model.posterPath}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:scaleType="centerCrop"
+                android:textAlignment="center"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space"
+                android:text="@{model.title}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
