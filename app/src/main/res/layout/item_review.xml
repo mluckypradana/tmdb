@@ -7,11 +7,11 @@
 
         <variable
             name="model"
-            type="com.luc.base.entity.Review" />
+            type="id.co.tmdb.entity.Review" />
 
         <variable
             name="handler"
-            type="com.luc.base.core.base.BaseListAdapter.Holder" />
+            type="id.co.tmdb.core.base.BaseListAdapter.Holder" />
 
         <variable
             name="position"

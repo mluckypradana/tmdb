@@ -5,7 +5,7 @@
 
         <variable
             name="vm"
-            type="com.luc.base.ui.vm.MoviesVm" />
+            type="id.co.tmdb.ui.vm.MoviesVm" />
     </data>
 
     <ViewFlipper

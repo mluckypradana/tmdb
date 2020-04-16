@@ -7,11 +7,11 @@
 
         <variable
             name="model"
-            type="com.luc.base.entity.Movie" />
+            type="id.co.tmdb.entity.Movie" />
 
         <variable
             name="handler"
-            type="com.luc.base.core.base.BaseListAdapter.Holder" />
+            type="id.co.tmdb.core.base.BaseListAdapter.Holder" />
 
         <variable
             name="position"

@@ -5,7 +5,7 @@
 
         <variable
             name="vm"
-            type="com.luc.base.ui.vm.MainVm" />
+            type="id.co.tmdb.ui.vm.MainVm" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"

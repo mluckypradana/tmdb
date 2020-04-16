@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.luc.base.ui.vm.InfoVm" />
+            type="id.co.tmdb.ui.vm.InfoVm" />
     </data>
 
     <androidx.core.widget.NestedScrollView

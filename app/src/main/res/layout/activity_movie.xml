@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.luc.base.ui.vm.MovieVm" />
+            type="id.co.tmdb.ui.vm.MovieVm" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"

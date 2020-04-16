@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.luc.base.ui.vm.ReviewsVm" />
+            type="id.co.tmdb.ui.vm.ReviewsVm" />
     </data>
 
 
