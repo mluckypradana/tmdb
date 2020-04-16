@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 public abstract class EndlessOnScrollListener extends RecyclerView.OnScrollListener {
     private int mPreviousTotal = 0;
     private boolean mLoading = true;
@@ -13,7 +15,7 @@ public abstract class EndlessOnScrollListener extends RecyclerView.OnScrollListe
     public void onScrolled(@NotNull RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
         int visibleItemCount = recyclerView.getChildCount();
-        Integer totalItemCount = recyclerView.getLayoutManager().getItemCount();
+        Integer totalItemCount = Objects.requireNonNull(recyclerView.getLayoutManager()).getItemCount();
         int firstVisibleItem = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
         if (mLoading) {
             if (totalItemCount > mPreviousTotal) {

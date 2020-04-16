@@ -7,7 +7,6 @@
     android:padding="@dimen/big_content">
 
     <ProgressBar
-        android:id="@+id/pb_please_wait"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="@dimen/progress_bar_size"
         android:layout_height="@dimen/progress_bar_size"
@@ -18,7 +17,6 @@
         android:progressTint="@color/colorPrimary" />
 
     <TextView
-        android:id="@+id/tv_please_wait"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

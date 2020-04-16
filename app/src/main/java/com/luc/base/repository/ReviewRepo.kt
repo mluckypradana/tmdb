@@ -1,7 +1,6 @@
 package com.luc.base.repository
 
 import com.luc.base.core.retrofit.Resource
-import com.luc.base.database.repository.BaseRepository
 import com.luc.base.entity.Movie
 import com.luc.base.entity.Review
 

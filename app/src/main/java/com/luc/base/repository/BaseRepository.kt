@@ -1,4 +1,4 @@
-package com.luc.base.database.repository
+package com.luc.base.repository
 
 import com.luc.base.R
 import com.luc.base.core.retrofit.ApiService
