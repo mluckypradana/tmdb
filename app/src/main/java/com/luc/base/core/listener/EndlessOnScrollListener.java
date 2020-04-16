@@ -1,18 +1,19 @@
 package com.luc.base.core.listener;
 
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.jetbrains.annotations.NotNull;
 
 public abstract class EndlessOnScrollListener extends RecyclerView.OnScrollListener {
     private int mPreviousTotal = 0;
     private boolean mLoading = true;
 
     @Override
-    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+    public void onScrolled(@NotNull RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
         int visibleItemCount = recyclerView.getChildCount();
-        int totalItemCount = recyclerView.getLayoutManager().getItemCount();
+        Integer totalItemCount = recyclerView.getLayoutManager().getItemCount();
         int firstVisibleItem = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
         if (mLoading) {
             if (totalItemCount > mPreviousTotal) {

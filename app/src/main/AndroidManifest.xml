@@ -19,7 +19,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.notify.NotifyActivity" />
         <activity android:name=".ui.activity.MovieActivity" />
         <activity
             android:name=".ui.activity.SplashActivity"

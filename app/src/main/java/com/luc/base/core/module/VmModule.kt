@@ -1,10 +1,6 @@
 package com.luc.base.core.module
 
 import com.luc.base.core.base.BaseViewModel
-import com.luc.base.ui.home.HomeVm
-import com.luc.base.ui.login.LoginVm
-import com.luc.base.ui.notes.NotesVm
-import com.luc.base.ui.notify.NotifyVm
 import com.luc.base.ui.vm.*
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -19,10 +15,5 @@ object VmModule {
         viewModel { MovieVm(androidApplication()) }
         viewModel { InfoVm(androidApplication()) }
         viewModel { ReviewsVm(androidApplication()) }
-
-        viewModel { LoginVm(androidApplication()) }
-        viewModel { HomeVm(androidApplication()) }
-        viewModel { NotesVm(androidApplication()) }
-        viewModel { NotifyVm(androidApplication()) }
     }
 }

@@ -1,4 +1,4 @@
-package com.luc.base.core.api
+package com.luc.base.core.retrofit
 
 import com.luc.base.core.Constant
 import okhttp3.Interceptor

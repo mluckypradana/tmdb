@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.luc.base.core.api.Resource
+import com.luc.base.core.retrofit.Resource
 import com.luc.base.core.base.BaseViewModel
 import com.luc.base.entity.Genre
 import com.luc.base.repository.GenreRepo

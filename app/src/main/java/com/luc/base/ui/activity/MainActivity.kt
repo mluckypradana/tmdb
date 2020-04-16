@@ -2,7 +2,7 @@ package com.luc.base.ui.activity
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import com.luc.base.core.api.Resource
+import com.luc.base.core.retrofit.Resource
 import com.luc.base.core.base.BaseActivity
 import com.luc.base.core.base.BaseViewPagerAdapter
 import com.luc.base.entity.Genre

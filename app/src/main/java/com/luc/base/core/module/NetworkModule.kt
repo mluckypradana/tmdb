@@ -1,8 +1,8 @@
 package com.luc.base.core.module
 
 import com.google.gson.Gson
-import com.luc.base.core.api.ApiService
-import com.luc.base.core.api.RetrofitFactory
+import com.luc.base.core.retrofit.ApiService
+import com.luc.base.core.retrofit.RetrofitFactory
 import org.koin.dsl.module
 
 object NetworkModule {
@@ -16,7 +16,7 @@ object NetworkModule {
     }
 
     private fun provideApiService(): ApiService {
-        return RetrofitFactory.retrofitService(false)
+        return RetrofitFactory.retrofitService()
     }
 
     private fun provideGson(): Gson? {

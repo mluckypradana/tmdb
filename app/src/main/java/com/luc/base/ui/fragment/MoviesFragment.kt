@@ -8,11 +8,11 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import com.luc.base.R
 import com.luc.base.core.Constant
-import com.luc.base.core.api.Resource
+import com.luc.base.core.retrofit.Resource
 import com.luc.base.core.base.BaseFragment
 import com.luc.base.core.base.BaseListAdapter
 import com.luc.base.core.control.ActivityController
-import com.luc.base.core.helper.json
+import com.luc.base.core.extension.json
 import com.luc.base.core.listener.EndlessOnScrollListener
 import com.luc.base.databinding.FragmentMoviesBinding
 import com.luc.base.entity.Genre

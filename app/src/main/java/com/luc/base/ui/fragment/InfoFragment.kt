@@ -1,7 +1,6 @@
 package com.luc.base.ui.fragment
 
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,7 +12,7 @@ import com.luc.base.R
 import com.luc.base.core.Constant
 import com.luc.base.core.base.BaseFragment
 import com.luc.base.core.base.BaseListAdapter
-import com.luc.base.core.helper.json
+import com.luc.base.core.extension.json
 import com.luc.base.databinding.FragmentInfoBinding
 import com.luc.base.entity.Movie
 import com.luc.base.ui.vm.InfoVm

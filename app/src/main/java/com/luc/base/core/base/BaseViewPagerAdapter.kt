@@ -5,11 +5,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import java.util.*
 
-/**
- * Class for ticket / booking tab
- * Created by MuhammadLucky on 12/03/2018.
- */
-
 class BaseViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     private val mFragmentList = ArrayList<Fragment>()
     private val mFragmentTitleList = ArrayList<String>()
@@ -20,11 +15,6 @@ class BaseViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(mana
 
     override fun getCount(): Int {
         return mFragmentList.size
-    }
-
-    fun clearFragments() {
-        mFragmentList.clear()
-        mFragmentTitleList.clear()
     }
 
     fun addFragment(fragment: Fragment, title: String) {

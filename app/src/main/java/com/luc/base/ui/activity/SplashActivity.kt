@@ -1,12 +1,10 @@
 package com.luc.base.ui.activity
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.lifecycle.Observer
-import com.luc.base.core.api.Resource
+import com.luc.base.core.retrofit.Resource
 import com.luc.base.core.base.BaseActivity
 import com.luc.base.core.control.ActivityController
-import com.luc.base.databinding.ActivityMainBinding
 import com.luc.base.ui.vm.SplashVm
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

@@ -1,7 +1,7 @@
 package com.luc.base.repository
 
 import com.luc.base.core.Constant
-import com.luc.base.core.api.Resource
+import com.luc.base.core.retrofit.Resource
 import com.luc.base.database.repository.BaseRepository
 import com.luc.base.entity.Genre
 import java.lang.Exception

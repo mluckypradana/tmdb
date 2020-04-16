@@ -9,13 +9,10 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.luc.base.BR
 
-// Common adapter to load the recyclerView
 class BaseListAdapter(
     @LayoutRes
     var layoutId: Int = 0
 ) : RecyclerView.Adapter<BaseListAdapter.Holder>() {
-
-    //List of items that will be inflated in the layout
     var items: List<*>? = null
     var onItemClick = fun(_: View, _: Int): Unit = Unit
 
@@ -30,9 +27,6 @@ class BaseListAdapter(
         return Holder(binding)
     }
 
-    /**
-     *   Count of items inside the adapter
-     */
     override fun getItemCount(): Int {
         return items?.size ?: 0
     }
@@ -42,10 +36,6 @@ class BaseListAdapter(
     }
 
     inner class Holder(val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
-        /**
-         *   Event handler, can be used in the row layout to register any click events,
-         *   these events can be handled in the parent.
-         */
 
         fun bind(ob: Any?) {
             binding.setVariable(BR.model, ob)
@@ -54,9 +44,6 @@ class BaseListAdapter(
             binding.executePendingBindings()
         }
 
-        /**
-         *   Propagate clicks to parent via the event handler
-         */
         fun onClick(view: View, position: Int) {
             onItemClick(view, position)
         }

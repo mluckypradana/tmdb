@@ -3,7 +3,7 @@ package com.luc.base
 import androidx.multidex.MultiDexApplication
 import com.ashokvarma.gander.Gander
 import com.ashokvarma.gander.persistence.GanderPersistence
-import com.luc.base.core.module.DbModule.dbModule
+import com.luc.base.core.module.RepoModule.dbModule
 import com.luc.base.core.module.NetworkModule.networkMockModule
 import com.luc.base.core.module.NetworkModule.networkModule
 import com.luc.base.core.module.VmModule.vmModule
@@ -29,7 +29,4 @@ class App : MultiDexApplication() {
         }
     }
 
-    fun setForTesting() {
-        forTesting = true
-    }
 }

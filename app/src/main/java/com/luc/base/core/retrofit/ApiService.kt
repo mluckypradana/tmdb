@@ -1,4 +1,4 @@
-package com.luc.base.core.api
+package com.luc.base.core.retrofit
 
 import com.luc.base.api.BaseListResponse
 import com.luc.base.api.GenresResponse
