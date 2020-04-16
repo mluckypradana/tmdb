@@ -1,7 +1,6 @@
 package com.luc.base.core
 
 object Constant {
-    const val API_KEY = "b97bf80c40219ed9d2196c1309587621"
     const val LANGUAGE = "en-US"
     const val POPULARITY = "popularity.desc"
     const val ADDITIONAL_MOVIE_DATA = "videos"

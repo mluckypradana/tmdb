@@ -1,6 +1,7 @@
 package com.luc.base.core.retrofit
 
 import com.luc.base.core.Constant
+import com.luc.base.core.helper.JNIUtil
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -10,7 +11,7 @@ class ApiInterceptor : Interceptor {
         val original = chain.request()
         val originalHttpUrl = original.url
         val url = originalHttpUrl.newBuilder()
-            .addQueryParameter("api_key", Constant.API_KEY)
+            .addQueryParameter("api_key", JNIUtil.apiKey())
             .addQueryParameter("language", Constant.LANGUAGE)
             .build()
         val requestBuilder = original.newBuilder()

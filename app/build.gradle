@@ -37,37 +37,6 @@ android {
         enabled = true
     }
 
-    flavorDimensions "main"
-    productFlavors {
-        mock {
-            dimension "main"
-            externalNativeBuild {
-                cmake {
-                    cppFlags '-DMOCK'
-                    arguments "-DANDROID_STL=c++_shared"
-                }
-            }
-        }
-        dev {
-            dimension "main"
-            externalNativeBuild {
-                cmake {
-                    cppFlags '-DDEV'
-                    arguments "-DANDROID_STL=c++_shared"
-                }
-            }
-        }
-        prod {
-            dimension "main"
-            externalNativeBuild {
-                cmake {
-                    cppFlags '-DPROD'
-                    arguments "-DANDROID_STL=c++_shared"
-                }
-            }
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled true
@@ -75,25 +44,10 @@ android {
         }
     }
 
-    applicationVariants.all {
-        variant ->
-            variant.outputs.all {
-                output -> outputFileName = "app_${variant.name}_${variant.versionName}.apk"
-            }
-    }
-
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
             version "3.10.2"
-        }
-    }
-    sourceSets {
-        test {
-            resources.srcDirs += ['sampledata']
-        }
-        androidTest {
-            resources.srcDirs += ['sampledata']
         }
     }
 }
